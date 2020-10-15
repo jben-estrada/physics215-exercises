@@ -1,5 +1,7 @@
 physics215/
 .vscode/
-src/sandbox/.ipynb_checkpoints/
+src/sandbox/
 src/solutions/.ipynb_checkpoints/
+.ipynb_checkpoints/
+
 
