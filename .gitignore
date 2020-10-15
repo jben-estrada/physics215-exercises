@@ -2,6 +2,7 @@ physics215/
 .vscode/
 src/sandbox/
 src/solutions/.ipynb_checkpoints/
+src/solutions/__pycache__/
 .ipynb_checkpoints/
 
 
