@@ -1,4 +1,4 @@
-# Solutions to the exercises in ThinkComplexity
+# Solutions to the exercises in [ThinkComplexity2](https://github.com/AllenDowney/ThinkComplexity2)
 The solutions are in Jupyter notebooks in ./src/solutions/
 ### Requirements
 Dependencies are listed in [requirements.txt](https://github.com/nip-classes/trying-out-github-jben-estrada/blob/populate_repo/requirements.txt). There may be difference between the libraries I am using and what the book is using (e.g. NetworkX).
