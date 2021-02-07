@@ -4,6 +4,8 @@ Available from http://greenteapress.com
 
 Copyright 2019 Allen B. Downey.
 MIT License: https://opensource.org/licenses/MIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source: https://github.com/AllenDowney/ThinkComplexity2/blob/master/notebooks/order.py
 """
 
 import os

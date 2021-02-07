@@ -4,6 +4,8 @@ Available from http://greenteapress.com
 
 Copyright 2016 Allen B. Downey.
 MIT License: https://opensource.org/licenses/MIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source: https://github.com/AllenDowney/ThinkComplexity2/blob/master/notebooks/Cell1D.py
 """
 
 import numpy as np

@@ -5,6 +5,8 @@ http://greenteapress.com/complexity
 
 Copyright 2016 Allen Downey
 MIT License: http://opensource.org/licenses/MIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source: https://github.com/AllenDowney/ThinkComplexity2/blob/master/notebooks/Cell2D.py
 """
 
 import numpy as np

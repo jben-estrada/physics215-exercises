@@ -11,6 +11,8 @@ This variant of the Turing machine has the following instructions:
         > erase - Erase the symbol on the current cell. Alias to the write `BLANK_SYM` where `BLANK_SYM` is the blank symbol.
     - Change state instruction
         > goto STATE - Jump to the specified state `STATE`.
+
+Author: John Benedick Estrada
 """
 
 from collections import defaultdict

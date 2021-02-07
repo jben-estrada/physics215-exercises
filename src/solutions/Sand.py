@@ -1,5 +1,6 @@
 """
-From ThinkComplexity2. Original author: `AllenDowney`.
+Basis code source: https://github.com/AllenDowney/ThinkComplexity2/blob/master/code/Sand.py
+Original author: `AllenDowney`
 
 Modifications done on `Sand.py`:
 - The class `Cell2DViewer`, and its subclass `SandPile2DViewer` and its instances are removed.
