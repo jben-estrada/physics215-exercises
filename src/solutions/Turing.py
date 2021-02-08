@@ -56,7 +56,7 @@ class Turing:
     def __exec(self):
         curr_symbol = self.tape[self.tape_pos]
         if curr_symbol not in self.symbols:
-            raise ValueError(f"Unknown symbol '{curr_symbol}'")
+            raise ValueError("Unknown symbol '{}'".format(curr_symbol))
 
         instrc_set = self.trans_tbl[self.curr_state][curr_symbol]
 
@@ -84,7 +84,7 @@ class Turing:
             state = instrc[1]
             self.curr_state = state
         else:
-            raise ValueError(f"Unknown operation: {instrc[0]}")
+            raise ValueError("Unknown operation: {}".format(instrc[0]))
     
     def reset(self):
         self.tape = self.init_tape
@@ -94,7 +94,7 @@ class Turing:
     def print_tape(self, lbound, ubound, delim=" | "):
         print(end=delim)
         for idx in range(lbound, ubound):
-            print(f"{self.tape[idx]}",  end=delim)
+            print("{}".format(self.tape[idx]),  end=delim)
         print()   # Print a new line.
 
     def __iter__(self):

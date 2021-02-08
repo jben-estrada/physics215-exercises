@@ -35,11 +35,12 @@ class TMParser:
     def error(self, msg=""):
         # Get error information.
         lbound, rbound = self.find_line_bounds()
-        line_num = f"[{self.current_line_num()}]: "
+        line_num = "[{}]: ".format(self.current_line_num())
         curr_line = self.input_str[lbound: rbound]
         line_ptr = " "*(self.pos - lbound + len(line_num)) + "^"
+        err_msg = "\n{}{}\n{}\n\n{}".format(line_num, curr_line, line_ptr, msg)
 
-        raise SyntaxError(f"\n{line_num}{curr_line}\n{line_ptr}\n\n{msg}")
+        raise SyntaxError(err_msg)
 
     def current_line_num(self):
         newline_count = 0
@@ -96,7 +97,7 @@ class TMParser:
     def scan_str_literal(self, string):
         for c in string:
             if self.input_str[self.pos] != c:
-                self.error(f"Expected: '{string}'")
+                self.error("Expected: '{}'".format(string))
             self.pos += 1
 
     def scan_symbol_cnstrc(self):
@@ -120,7 +121,7 @@ class TMParser:
         # blank symbol.
         # Put the symbol name in the symbol set.
         if blank_sym_name in self.symbols:
-            self.error(f"The symbol '{blank_sym_name}' is declared more than once")
+            self.error("The symbol '{}' is declared more than once".format(blank_sym_name))
         self.symbols.add(blank_sym_name)
         self.blank_symbol = blank_sym_name
 
@@ -132,7 +133,7 @@ class TMParser:
 
         # Put the symbol name in the symbol set.
         if symbol_name in self.symbols:
-            self.error(f"The symbol '{symbol_name}' is declared more than once")
+            self.error("The symbol '{}' is declared more than once".format(symbol_name))
         self.symbols.add(symbol_name)
     
     def get_symbol_name(self):
@@ -152,7 +153,7 @@ class TMParser:
 
         # Register a state.
         if state_name in self.trans_tbl:
-            self.error(f"The state '{state_name}' is declared more than once")
+            self.error("The state '{}' is declared more than once".format(state_name))
         self.trans_tbl[state_name] = dict((s, []) for s in self.symbols)
 
         if self.init_state is None:
@@ -212,7 +213,7 @@ class TMParser:
             self.repeat_scan(self.scan_whitespace)
             symbol_name = self.get_symbol_name()
             if symbol_name not in self.symbols:
-                self.error(f"Unknown symbol {symbol_name}")
+                self.error("Unknown symbol {}".format(symbol_name))
 
             op = (op_name, symbol_name)
         elif op_name == self.OP_GOTO:
@@ -220,7 +221,7 @@ class TMParser:
             self.repeat_scan(self.scan_whitespace)
             state_name = self.get_state_name()
             if state_name in self.symbols:
-                self.error(f"The symbol '{state_name}' cannot be a state")
+                self.error("The symbol '{}' cannot be a state".format(state_name))
 
             op = (op_name, state_name)
         else:
@@ -228,7 +229,7 @@ class TMParser:
 
         curr_state, curr_symbol = self.curr_token_str
         if curr_symbol not in self.trans_tbl[curr_state]:
-            self.error(f"'{curr_symbol}' is not a defined symbol")
+            self.error("'{}' is not a defined symbol".format(curr_symbol))
 
         self.trans_tbl[curr_state][curr_symbol].append(op)
 
